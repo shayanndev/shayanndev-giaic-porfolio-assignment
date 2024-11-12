@@ -1,6 +1,3 @@
-// components/Contact.jsx
-import Button from './Button';
-
 export default function Contact() {
   return (
     <section className="py-16 bg-indigo-100">
