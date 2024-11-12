@@ -1,6 +1,3 @@
-// components/Projects.jsx
-import Button from './Button';
-
 export default function Projects() {
     const projects = [
         {
