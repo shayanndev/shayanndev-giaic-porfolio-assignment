@@ -1,5 +1,3 @@
-// components/Hero.jsx
-import Button from './Button';
 import { FaArrowDown } from 'react-icons/fa';
 
 export default function Hero() {
