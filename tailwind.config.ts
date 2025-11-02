@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        neon: "var(--neon)",
+        "neon-dark": "var(--neon-dark)",
       },
     },
   },

@@ -7,14 +7,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --neon: #00f5ff;
+  --neon-glow: #00f5ff;
+  --neon-dark: #008a92;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
   }
 }
 
@@ -22,6 +24,11 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  background: transparent;
 }
 
 .pacifico-regular {
@@ -34,4 +41,48 @@ body {
   font-family: "Send Flowers", cursive;
   font-weight: 400;
   font-style: normal;
+}
+
+/* Custom Cursor Styles */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  box-shadow: 0 0 10px var(--neon-glow), 0 0 20px var(--neon-glow);
+}
+
+.cursor-trail {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neon);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0.5;
+  box-shadow: 0 0 15px var(--neon-glow);
+}
+
+.cursor-dot.hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: var(--neon);
+  box-shadow: 0 0 15px var(--neon-glow), 0 0 30px var(--neon-glow);
+}
+
+.cursor-trail.hover {
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
 }
